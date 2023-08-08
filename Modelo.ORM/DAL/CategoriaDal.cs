@@ -23,13 +23,13 @@ namespace Modelo.ORM.DAL
 
         const string sqlAtualizar = @"UPDATE CATEGORIA SET DESCRICAO = @Descricao, ISATIVO = @IsAtivo WHERE CATEGORIA_ID = @CategoriaID;";
 
-        const string sqlExcluir = @"DELETE FROM CATEGORIA WHERE CATEGORIA_ID = @CategoriaID";
+        const string sqlExcluir = @"DELETE FROM CATEGORIA WHERE CATEGORIA_ID = @CategoriaID;";
 
-        const string sqlSelecionar = @"SELET * FROM CATEGORIA WHERE CATEGORIA_ID = @CategoriaID";
+        const string sqlSelecionar = @"SELET * FROM CATEGORIA WHERE CATEGORIA_ID = @CategoriaID;";
 
-        const string sqlSelecionarTodos = @"SELECT * FROM CATEGORIA ORDER BY DESCRICAO";
+        const string sqlSelecionarTodos = @"SELECT * FROM CATEGORIA ORDER BY DESCRICAO;";
 
-        const string sqlSelecionarFiltro = @"SELECT * FROM CATEGORIA WHERE DESCRICAO LIKE @CategoriaID OERDER BY DESCRICAO";
+        const string sqlSelecionarFiltro = @"SELECT * FROM CATEGORIA WHERE DESCRICAO LIKE @CategoriaID OERDER BY DESCRICAO;";
 
         //Funções CRUD
         public CategoriaInfo Salvar(CategoriaInfo catInfo)

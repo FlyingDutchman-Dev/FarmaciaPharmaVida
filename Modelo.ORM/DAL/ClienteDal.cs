@@ -21,17 +21,21 @@ namespace Modelo.ORM.DAL
         }
 
         //Strings de comandos mysql
-        const string sqlInserir = @"INSERT INTO CATEGORIA (DESCRICAO, ISATIVO) VALUES (@Descricao, @IsAtivo);";
 
-        const string sqlAtualizar = @"UPDATE CATEGORIA SET DESCRICAO = @Descricao, ISATIVO = @IsAtivo WHERE CATEGORIA_ID = @CategoriaID;";
+        const string sqlInserir = @"INSERT INTO CLIENTES (NOME_RAZAO_SOCIAL, TIPO_PESSOA, CPF_CNPJ, ENDERECO, COMPLEMENTO, BAIRRO, CEP, CIDADE, ESTADO, TELEFONE, CELULAR, EMAIL, ISATIVO) 
+                                  VALUES (@NomeRazaoSocial, @TipoPessoa, @CPFCNPJ, @Endereco, @Complemento, @Bairro, @CEP, @Cidade, @Estado, @Telefone, @Celular, @Email, @IsAtivo);";
 
-        const string sqlExcluir = @"DELETE FROM CATEGORIA WHERE CATEGORIA_ID = @CategoriaID";
+        const string sqlAtualizar = @"UPDATE CLIENTES SET NOME_RAZAO_SOCIAL = @NomeRazaoSocial, TIPO_PESSOA = @TipoPessoa, CPF_CNPJ = @CPFCNPJ, ENDERECO = @Endereco, COMPLEMENTO = @Complemento,
+					                BAIRRO = @Bairro, CEP = @CEP, CIDADE = @Cidade, ESTADO = @Estado, TELEFONE = @Telefone, CELULAR = @Celular, EMAIL = @Email, ISATIVO = @IsAtivo
+                                    WHERE CLIENTE_ID = @ClienteID;";
 
-        const string sqlSelecionar = @"SELET * FROM CATEGORIA WHERE CATEGORIA_ID = @CategoriaID";
+        const string sqlExcluir = @"DELETE FROM CLIENTES WHERE CLIENTE_ID = @ClienteID;";
 
-        const string sqlSelecionarTodos = @"SELECT * FROM CATEGORIA ORDER BY DESCRICAO";
+        const string sqlSelecionar = @"SELET * FROM CLIENTES WHERE CLIENTE_ID = @ClienteID;";
 
-        const string sqlSelecionarFiltro = @"SELECT * FROM CATEGORIA WHERE DESCRICAO LIKE @CategoriaID OERDER BY DESCRICAO";
+        const string sqlSelecionarTodos = @"SELECT * FROM CLIENTES ORDER BY NOME_RAZAO_SOCIAL;";
+
+        const string sqlSelecionarFiltro = @"SELECT * FROM CLIENTES WHERE NOME_RAZAO_SOCIAL LIKE @ClienteID OERDER BY NOME_RAZAO_SOCIAL;";
 
         //Funções CRUD
         public ClienteInfo Salvar(ClienteInfo clientetInfo)
